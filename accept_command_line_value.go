@@ -7,16 +7,16 @@ import (
 )
 
 func main() {
-	//reading an integer
-	var age int
-	fmt.Println("What is your age?")
-	_, err := fmt.Scan(&age)
 
-	//reading a string
-	reader := bufio.newReader(os.Stdin)
-	var name string
-	fmt.Println("What is your name?")
-	name, _ := reader.readString("\n")
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Print("Enter Namr: ")
+	name, _ := reader.ReadString('\n')
+	fmt.Println(name)
+
+	reader1 := bufio.NewReader(os.Stdin)
+	fmt.Print("Enter Age: ")
+	age, _ := reader1.Read("\n")
+	fmt.Println(age)
 
 	fmt.Println("Your name is ", name, " and you are age ", age)
 }
